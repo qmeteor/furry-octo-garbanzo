@@ -15,35 +15,35 @@ class App extends Component {
       };
 
       return (
-          <CSSTransitionGroup {...transitionOptions}>
           <Modal>
-               <header><button className="btn btn-defaualt" onClick={() => this.props.showModal(false)}>X</button></header>
+               <header><button className="btn btn-default" onClick={() => this.props.showModal(false)}>X</button></header>
                <br/>
                <h4>Modal</h4>
                <p>Some text to describe your modal.</p>
           </Modal>
-          </CSSTransitionGroup>
-
       );
   }
 
   render() {
-
-
       if(this.props.modal.modalType === true ) {
             return (
-                <div className="overlay">
-                    <h1>React + Redux | Modal</h1>
-                    <button className="btn btn-defaualt" onClick={() => this.props.showModal(false)}>Close Modal</button>
-                    {this.renderModal()}
+                <div>
+                    <button className="btn btn-default" onClick={() => this.props.showModal(false)}>Close Modal</button>
+                    <h3>Beanster.tv | Video Q & A</h3>
+                    <p>Follow the questions you want answered.</p>
+                    <div className="overlay">
+                            {this.renderModal()}
+                    </div>
                 </div>
-
             );
         } else {
             return (
-                <div className="overlay fade">
-                    <h1>React + Redux | Modal</h1>
-                    <button className="btn btn-default" onClick={() => this.props.showModal(true)}>Open Modal</button>
+                <div>
+                  <button className="btn btn-default" onClick={() => this.props.showModal(true)}>Open Modal</button>
+                  <h3>Beanster.tv | Video Q & A</h3>
+                  <p>Follow the questions you want answered.</p>
+                  <div className="overlay fade">
+                  </div>
                 </div>
             );
         }

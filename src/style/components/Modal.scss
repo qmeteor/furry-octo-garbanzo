@@ -26,17 +26,17 @@ body .modal {
 }
 
 .overlay {
-  position: absolute;
+  position: relative;
   right: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vh;
+  height: 100vh;
   z-index: 100;
-  background-color: rgba(0,0,0,0.55); /*dim the background*/
+  background-color: rgba(0,0,0,0.65); /*dim the background*/
   opacity: 1;
-  transition: background-color 0.1s ease-out;
+  transition: background-color .1s ease-out;
 }
 
 .overlay.fade {
   background-color: rgba(0,0,0,0);
-  transition: background-color 0.2s ease-in;
+  transition: background-color .1s ease-in;
 }
