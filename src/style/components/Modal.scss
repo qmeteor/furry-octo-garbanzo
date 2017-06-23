@@ -1,42 +1,16 @@
-body .modal {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.8);
-  position: fixed;
-  top: 100px;
-  left: 200px;
-  right: 200px;
-  bottom: 200px;
-  border: 1px solid #ccc;
-  background: #fff;
-  overflow: auto;
-  border-radius: 5px;
-  outline: none;
-  padding: 20px;
-  display: block;
-}
 
-/* starting state of animation */
-.fade-enter {
+.ReactModalPortal > * {
+  // When the modal is closed, overlay div has no css class
+  // This selector should be overridden by the `&--after-open` class below
   opacity: 0;
 }
-
-/* ending state of animation */
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: 0.5s ease-in all;
-}
-
-.overlay {
-  position: relative;
-  right: 0;
-  width: 100vh;
-  height: 100vh;
-  z-index: 100;
-  background-color: rgba(0,0,0,0.65); /*dim the background*/
-  opacity: 1;
-  transition: background-color .1s ease-out;
-}
-
-.overlay.fade {
-  background-color: rgba(0,0,0,0);
-  transition: background-color .1s ease-in;
+.ReactModal__Overlay {
+  transition: opacity 300ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.65);
+  &--after-open {
+    opacity: 1;
+  }
+  &--before-close {
+    opacity: 0;
+  }
 }

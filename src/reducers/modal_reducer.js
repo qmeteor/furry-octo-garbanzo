@@ -7,11 +7,11 @@ import {
 } from '../actions/types';
 
 const initialState = {
-    modalType: null
+    modalType: false
 };
 
 export default function(state = initialState, action) {
-    console.log(action.modalType);
+    console.log('reducer', action.modalType);
     switch(action.type) {
         case SHOW_MODAL:
             return {
